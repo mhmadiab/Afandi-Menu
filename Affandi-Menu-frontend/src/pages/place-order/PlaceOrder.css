@@ -1,0 +1,133 @@
+.place-order {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on mobile */
+    align-items: center; /* Center-align items on mobile */
+    justify-content: space-between;
+    gap: 20px; /* Reduce gap for mobile */
+    margin-top: 30px; /* Adjust margin for mobile */
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  .place-order-left,
+  .place-order-right {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Remove max-width restriction */
+  }
+  
+  .place-order-left .title {
+    font-size: 24px; /* Reduce font size for mobile */
+    font-weight: 600;
+    margin-bottom: 15px; /* Adjust margin for mobile */
+  }
+  
+  .place-order-left input {
+    margin-bottom: 10px; /* Reduce margin for mobile */
+    width: 100%;
+    padding: 8px; /* Reduce padding for mobile */
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: coral;
+  }
+  
+  .place-order-left .multi-fields {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically on mobile */
+    gap: 10px; /* Reduce gap for mobile */
+  }
+  
+  .place-order-right {
+    width: 100%;
+  }
+  
+  .cart-total {
+    padding: 15px; /* Add padding for better spacing */
+    background-color: #f9f9f9; /* Add background color for better visibility */
+    border-radius: 8px; /* Add border radius for better appearance */
+  }
+  
+  .cart-total h2 {
+    font-size: 20px; /* Reduce font size for mobile */
+    margin-bottom: 15px; /* Adjust margin for mobile */
+  }
+  
+  .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Adjust margin for mobile */
+  }
+  
+  .cart-total-details p {
+    font-size: 14px; /* Reduce font size for mobile */
+  }
+  
+  .cart-total-details b {
+    font-size: 16px; /* Reduce font size for mobile */
+  }
+  
+  .cart-total button {
+    width: 100%; /* Full width on mobile */
+    padding: 10px; /* Adjust padding for mobile */
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px; /* Reduce font size for mobile */
+    cursor: pointer;
+  }
+  
+  /* Media Queries for Desktop */
+  @media (min-width: 768px) {
+    .place-order {
+      flex-direction: row; /* Revert to horizontal layout on desktop */
+      align-items: start; /* Align items to the top */
+      gap: 50px; /* Increase gap for desktop */
+      margin-top: 50px; /* Adjust margin for desktop */
+      padding: 0; /* Remove padding for desktop */
+    }
+  
+    .place-order-left {
+      max-width: max(30%, 500px); /* Revert max-width for desktop */
+    }
+  
+    .place-order-left .title {
+      font-size: 30px; /* Revert font size for desktop */
+      margin-bottom: 20px; /* Revert margin for desktop */
+    }
+  
+    .place-order-left input {
+      margin-bottom: 15px; /* Revert margin for desktop */
+      padding: 10px; /* Revert padding for desktop */
+    }
+  
+    .place-order-left .multi-fields {
+      flex-direction: row; /* Revert to horizontal layout for inputs on desktop */
+      gap: 15px; /* Revert gap for desktop */
+    }
+  
+    .place-order-right {
+      width: max(40%, 500px); /* Revert width for desktop */
+    }
+  
+    .cart-total {
+      padding: 20px; /* Revert padding for desktop */
+    }
+  
+    .cart-total h2 {
+      font-size: 24px; /* Revert font size for desktop */
+      margin-bottom: 20px; /* Revert margin for desktop */
+    }
+  
+    .cart-total-details p {
+      font-size: 16px; /* Revert font size for desktop */
+    }
+  
+    .cart-total-details b {
+      font-size: 18px; /* Revert font size for desktop */
+    }
+  
+    .cart-total button {
+      width: auto; /* Revert width for desktop */
+      padding: 10px 20px; /* Revert padding for desktop */
+      font-size: 18px; /* Revert font size for desktop */
+    }
+  }

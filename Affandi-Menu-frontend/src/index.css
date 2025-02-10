@@ -1,0 +1,59 @@
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  width: 100vw; /* Ensures body does not exceed viewport width */
+}
+
+:lang(ar) {
+  font-family: "Cairo", sans-serif;
+}
+
+/* Ensure links inherit styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive container */
+.app {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px; /* Prevents it from being too wide */
+}
+
+/* Ensures images and other large elements don't overflow */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---- Mobile Styles ---- */
+@media (max-width: 768px) {
+  .app {
+    width: 95%; /* Adjusts width for smaller screens */
+  }
+
+}
