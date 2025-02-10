@@ -1,29 +1,29 @@
 .place-order {
     display: flex;
-    flex-direction: column; /* Stack elements vertically on mobile */
-    align-items: center; /* Center-align items on mobile */
+    flex-direction: column; 
+    align-items: center; 
     justify-content: space-between;
-    gap: 20px; /* Reduce gap for mobile */
-    margin-top: 30px; /* Adjust margin for mobile */
-    padding: 20px; /* Add padding for better spacing */
+    gap: 20px; 
+    margin-top: 30px; 
+    padding: 20px; 
   }
   
   .place-order-left,
   .place-order-right {
-    width: 100%; /* Full width on mobile */
-    max-width: 100%; /* Remove max-width restriction */
+    width: 100%; 
+    max-width: 100%; 
   }
   
   .place-order-left .title {
-    font-size: 24px; /* Reduce font size for mobile */
+    font-size: 24px; 
     font-weight: 600;
-    margin-bottom: 15px; /* Adjust margin for mobile */
+    margin-bottom: 15px; 
   }
   
   .place-order-left input {
-    margin-bottom: 10px; /* Reduce margin for mobile */
+    margin-bottom: 10px; 
     width: 100%;
-    padding: 8px; /* Reduce padding for mobile */
+    padding: 8px; 
     border: 1px solid #c5c5c5;
     border-radius: 4px;
     outline-color: coral;
@@ -31,8 +31,8 @@
   
   .place-order-left .multi-fields {
     display: flex;
-    flex-direction: column; /* Stack inputs vertically on mobile */
-    gap: 10px; /* Reduce gap for mobile */
+    flex-direction: column; 
+    gap: 10px;
   }
   
   .place-order-right {
@@ -40,94 +40,93 @@
   }
   
   .cart-total {
-    padding: 15px; /* Add padding for better spacing */
-    background-color: #f9f9f9; /* Add background color for better visibility */
-    border-radius: 8px; /* Add border radius for better appearance */
+    padding: 15px;
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
   }
   
   .cart-total h2 {
-    font-size: 20px; /* Reduce font size for mobile */
-    margin-bottom: 15px; /* Adjust margin for mobile */
+    font-size: 20px; 
+    margin-bottom: 15px; 
   }
   
   .cart-total-details {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px; /* Adjust margin for mobile */
+    margin-bottom: 10px; 
   }
   
   .cart-total-details p {
-    font-size: 14px; /* Reduce font size for mobile */
+    font-size: 14px; 
   }
   
   .cart-total-details b {
-    font-size: 16px; /* Reduce font size for mobile */
+    font-size: 16px;
   }
   
   .cart-total button {
-    width: 100%; /* Full width on mobile */
-    padding: 10px; /* Adjust padding for mobile */
+    width: 100%; 
+    padding: 10px; 
     background-color: coral;
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 16px; /* Reduce font size for mobile */
+    font-size: 16px; 
     cursor: pointer;
   }
-  
-  /* Media Queries for Desktop */
+ 
   @media (min-width: 768px) {
     .place-order {
-      flex-direction: row; /* Revert to horizontal layout on desktop */
-      align-items: start; /* Align items to the top */
-      gap: 50px; /* Increase gap for desktop */
-      margin-top: 50px; /* Adjust margin for desktop */
-      padding: 0; /* Remove padding for desktop */
+      flex-direction: row; 
+      align-items: start; 
+      gap: 50px; 
+      margin-top: 50px; 
+      padding: 0; 
     }
   
     .place-order-left {
-      max-width: max(30%, 500px); /* Revert max-width for desktop */
+      max-width: max(30%, 500px); 
     }
   
     .place-order-left .title {
-      font-size: 30px; /* Revert font size for desktop */
-      margin-bottom: 20px; /* Revert margin for desktop */
+      font-size: 30px; 
+      margin-bottom: 20px; 
     }
   
     .place-order-left input {
-      margin-bottom: 15px; /* Revert margin for desktop */
-      padding: 10px; /* Revert padding for desktop */
+      margin-bottom: 15px; 
+      padding: 10px;
     }
   
     .place-order-left .multi-fields {
-      flex-direction: row; /* Revert to horizontal layout for inputs on desktop */
-      gap: 15px; /* Revert gap for desktop */
+      flex-direction: row; 
+      gap: 15px; 
     }
   
     .place-order-right {
-      width: max(40%, 500px); /* Revert width for desktop */
+      width: max(40%, 500px);
     }
   
     .cart-total {
-      padding: 20px; /* Revert padding for desktop */
+      padding: 20px; 
     }
   
     .cart-total h2 {
-      font-size: 24px; /* Revert font size for desktop */
-      margin-bottom: 20px; /* Revert margin for desktop */
+      font-size: 24px; 
+      margin-bottom: 20px; 
     }
   
     .cart-total-details p {
-      font-size: 16px; /* Revert font size for desktop */
+      font-size: 16px; 
     }
   
     .cart-total-details b {
-      font-size: 18px; /* Revert font size for desktop */
+      font-size: 18px; 
     }
   
     .cart-total button {
-      width: auto; /* Revert width for desktop */
-      padding: 10px 20px; /* Revert padding for desktop */
-      font-size: 18px; /* Revert font size for desktop */
+      width: auto; 
+      padding: 10px 20px; 
+      font-size: 18px; 
     }
   }

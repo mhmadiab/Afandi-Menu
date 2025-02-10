@@ -20,5 +20,5 @@
   
   .fade-out {
     opacity: 0;
-    pointer-events: none; /* Disable interactions when hidden */
+    pointer-events: none; 
   }

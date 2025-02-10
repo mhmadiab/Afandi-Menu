@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext } from "react";
 import { food_list } from "../../assets/assets/frontend_assets/assets";
 import { useState } from "react";
 
