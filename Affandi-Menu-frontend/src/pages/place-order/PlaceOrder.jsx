@@ -97,7 +97,7 @@ const PlaceOrder = () => {
     orderDetails += "فريق مطعم أفندي 🍽️";
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${orderDetails}`;
-    window.open(whatsappUrl, "_blank");
+    window.location.href = whatsappUrl
   };
 
   return (
