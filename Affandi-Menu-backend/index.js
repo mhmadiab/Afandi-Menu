@@ -13,7 +13,11 @@ const port = 4000
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://afandi-menu.onrender.com', // Allow frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
+    credentials: true // Allow cookies and authentication headers
+}));
 
 // db connection
 connectDB()
