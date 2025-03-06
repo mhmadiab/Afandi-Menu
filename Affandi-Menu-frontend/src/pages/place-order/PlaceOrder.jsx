@@ -54,8 +54,6 @@ const PlaceOrder = () => {
       const response = await axios.post(`${url}/api/order/placeorder`, orderData);
 
       if (response.status === 201) {
-        alert("تم تأكيد الطلب بنجاح! 🎉");
-
         // Generate WhatsApp Message
         sendWhatsAppMessage(customerName, customerPhone, customerAddress, orderDetails, subtotal, deliveryFee, totalAmount);
 
