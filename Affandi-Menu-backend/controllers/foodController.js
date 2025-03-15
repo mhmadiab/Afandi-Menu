@@ -53,9 +53,41 @@ const removeFood = async(req, res)=>{
     }
 }
 
+const updateFood = async (req, res) => {
+    try {
+        const { id, name, description, price, category } = req.body;
+
+        const food = await foodModel.findById(id);
+        if (!food) {
+            return res.json({ success: false, message: "Food item not found" });
+        }
+
+        
+        if (req.file) {
+            fs.unlink(`uploads/${food.image}`, (err) => {
+                if (err) console.log("Error deleting old image:", err);
+            });
+            food.image = req.file.filename;
+        }
+
+        // Update fields
+        food.name = name || food.name;
+        food.description = description || food.description;
+        food.price = price || food.price;
+        food.category = category || food.category;
+
+        await food.save();
+
+        res.json({ success: true, message: "Food item updated successfully" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error updating food item" });
+    }
+};
 
 export {
     addFood,
     listFood,
-    removeFood
-}
+    removeFood,
+    updateFood
+};

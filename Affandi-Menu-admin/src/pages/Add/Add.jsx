@@ -10,6 +10,7 @@ const Add = () => {
   
 
   const [image, setImage] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     name: '',
     description: '',
@@ -27,6 +28,8 @@ const Add = () => {
 
   const onSubmitHandler = async(e)=>{
      e.preventDefault()
+     setLoading(true);
+
      const formData = new FormData()
      formData.append("name" , data.name)
      formData.append("description" , data.description)
@@ -34,19 +37,25 @@ const Add = () => {
      formData.append("category" , data.category)
      formData.append("image" , image) 
 
-     const response = await axios.post(`${url}/api/food/add` , formData)
-     if(response.data.success){
+     try {
+      const response = await axios.post(`${url}/api/food/add`, formData);
+      if (response.data.success) {
         setData({
           name: '',
           description: '',
           price: '',
-          category : 'Fresh Juice'
-        })
-        setImage(false)
-        toast.success(response.data.message)
-     }else{
-         toast.error(response.data.message)
-     }
+          category: 'Fresh Juice',
+        });
+        setImage(false);
+        toast.success(response.data.message);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error('Failed to add item');
+    } finally {
+      setLoading(false); 
+    }
 
 
   }

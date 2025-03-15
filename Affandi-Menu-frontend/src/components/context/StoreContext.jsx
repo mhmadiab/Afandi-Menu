@@ -9,8 +9,12 @@ const StoreContextProvider = (props)=>{
 
     const [cartItems, setCartItems]= useState({})
     const [food_list , setfoodList] = useState([])
+    const [loading, setLoading] = useState(false);
 
-    const url = import.meta.env.VITE_BACKEND_URL ||  'http://localhost:4000'
+    const url =
+    import.meta.env.MODE === 'development'
+        ? 'http://localhost:4000'
+        : import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
 
     const addToCart = (itemId)=>{
         if(!cartItems[itemId]){
@@ -50,30 +54,35 @@ const StoreContextProvider = (props)=>{
         return totalAmount
     }
 
-    const fetchFoodList = async()=>{
-        const response = await axios.get(`${url}/api/food/list`)
-        setfoodList(response.data.data)
-    }
+    
 
-    useEffect(()=>{
-        async function loadData () {
-            await fetchFoodList()
+    const fetchFoodList = async () => {
+        setLoading(true); // Start loading
+        try {
+            const response = await axios.get(`${url}/api/food/list`);
+            setfoodList(response.data.data);
+        } catch (error) {
+            console.error("Failed to fetch food list:", error);
+        } finally {
+            setLoading(false); // Stop loading
         }
-        loadData()
-    },[])
-
-
+    };
+    
+    useEffect(() => {
+        fetchFoodList();
+    }, []);
+    
     const contextValue = {
-       food_list,
-       cartItems,
-       setCartItems,
-       removeFromCart,
-       addToCart,
-       getTotalCartAmount,
-       getTotalCart,
-       url
-       
-    }
+        food_list,
+        cartItems,
+        setCartItems,
+        removeFromCart,
+        addToCart,
+        getTotalCartAmount,
+        getTotalCart,
+        url,
+        loading, 
+    };
 
     
 
