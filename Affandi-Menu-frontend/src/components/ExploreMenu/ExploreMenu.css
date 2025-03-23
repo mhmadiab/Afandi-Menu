@@ -1,58 +1,113 @@
-.explore-menu{
+.explore-menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.explore-menu h1{
+.explore-menu h1 {
     font-weight: 700;
     color: #262626;
     font-size: max(2.5vw, 24px);
 }
 
-.explore-menu-list{
+.explore-menu-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.explore-menu-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
     text-align: center;
     margin: 20px 0px;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px 0;
 }
 
-.explore-menu-list::-webkit-scrollbar{
+.explore-menu-list::-webkit-scrollbar {
     display: none;
 }
 
-.explore-menu-list-item img{
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.explore-menu-list-item img {
     width: 10vw;
     min-width: 80px; 
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    background-size: contain;
     transition: 0.2s;
-
 }
 
-.explore-menu-list-item p{
+.explore-menu-list-item p {
     font-weight: 600;
     margin-top: 10px;
     color: #747474;
     font-size: max(1.4vw, 16px);
     cursor: pointer;
-
 }
 
-.explore-menu hr{
+.explore-menu hr {
     margin: 10px 0px;
     height: 2px;
     background-color: #e2e2e2;
     border: none;
 }
 
-.explore-menu-list-item .active{
+/* Active Item */
+.explore-menu-list-item .active {
     border: 4px solid #f58428;
     padding: 2px;
 }
 
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left {
+    left: -20px;
+}
+
+.right {
+    right: -20px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .scroll-btn {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+
+    .left {
+        left: 5px;
+    }
+
+    .right {
+        right: 5px;
+    }
+}

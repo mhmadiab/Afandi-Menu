@@ -83,15 +83,24 @@ const addFood = async (req, res) => {
 
 //list food: 
 
-const listFood = async(req, res)=>{
+const listFood = async (req, res) => {
     try {
-        const foods = await foodModel.find({})
-        res.json({success : true , data : foods})
+        const { category } = req.query;
+        let query = {};
+
+        if (category && category !== "All") {
+            query.category = category; 
+        }
+
+        const foods = await foodModel.find(query).sort({ createdAt: -1 }); // Newest items first
+
+        res.json({ success: true, data: foods });
     } catch (error) {
-        console.log(error)
-        res.json({success : false , message : "Error listing food items"})
+        console.error(error);
+        res.status(500).json({ success: false, message: "Error listing food items" });
     }
-}
+};
+
 
 
 //remove food item:

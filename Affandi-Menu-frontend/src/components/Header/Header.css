@@ -1,10 +1,11 @@
-.header{
+.header {
     height: 34vw;
     margin: 30px auto;
-    background: url('/header.jpg') no-repeat;
     border-radius: 7px;
-    background-size:cover;
+    background-size: cover;
+    background-position: center;
     position: relative;
+    transition: background-image 1s ease-in-out;
 }
 
 .header::before {
@@ -14,12 +15,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Adjust opacity for fading effect */
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     z-index: 1;
 }
 
-.header-contents{
+.header-contents {
     text-align: right;
     position: absolute;
     display: flex;
@@ -33,19 +34,18 @@
     z-index: 2;
 }
 
-.header-contents h2{
+.header-contents h2 {
     font-weight: 600;
     color: #fff;
     font-size: max(4vw, 30px);
 }
 
-.header-contents p{
+.header-contents p {
     color: #fff;
     font-weight: 1vw;
 }
 
-
-.header-contents button{
+.header-contents button {
     border: none;
     font-weight: 700;
     color: #3fb449;
@@ -60,17 +60,13 @@
     .header {
         height: 50vh;
         margin: 20px auto;
-        background: url('/header.jpg') no-repeat center;
         background-size: cover;
     }
 
     .header-contents {
         max-width: 90%;
-        text-align: right; /* Keep text aligned to the right */
         right: 5%;
     }
-
-    
 
     .header-contents p {
         font-size: clamp(10px, 4vw, 16px);
