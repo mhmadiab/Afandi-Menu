@@ -8,6 +8,7 @@ import menu_3 from './menu_3.jpg'
 import menu_4 from './menu_4.jpg'
 import menu_5 from './menu_5.jpg'
 import menu_6 from './menu_6.jpg'
+import menu_7 from './menu_7.jpg'
 
 
 import food_1 from './food_1.jpg'
@@ -109,6 +110,10 @@ export const menu_list = [
         menu_name: "Specials",
         menu_image: menu_6
     },
+    {
+        menu_name: "Bottles",
+        menu_image: menu_7
+    }
     ]
 
 export const food_list = [
