@@ -72,7 +72,7 @@ const PlaceOrder = () => {
 
   // Function to send order confirmation via WhatsApp
   const sendWhatsAppMessage = (name, phone, address, orderItems, subtotal, deliveryFee, totalAmount) => {
-    const phoneNumber = "+96181034761";
+    const phoneNumber = "+96171301068";
 
     let orderDetails = "🎉 *شكرًا لطلبك!* 🎉%0A%0A";
     orderDetails += "*تفاصيل الطلب:*%0A%0A";
