@@ -3,9 +3,9 @@ import Order from '../Models/orderModel.js';
 // Save a new order (Customer places an order)
 export const placeOrder = async (req, res) => {
   try {
-    const { customer, orderDetails, subtotal, deliveryFees, total } = req.body;
+    const { customer, orderDetails, subtotal, deliveryFees, total, orderType } = req.body;
 
-    if (!customer || !orderDetails || !subtotal || !deliveryFees || !total) {
+    if (!customer || !orderDetails || !subtotal || deliveryFees === undefined || !total || !orderType) {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
@@ -14,7 +14,8 @@ export const placeOrder = async (req, res) => {
       orderDetails,
       subtotal,
       deliveryFees,
-      total
+      total,
+      orderType
     });
 
     await newOrder.save();
@@ -23,6 +24,7 @@ export const placeOrder = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 };
+
 
 // Fetch all orders (Admin Panel)
 export const getAllOrders = async (req, res) => {

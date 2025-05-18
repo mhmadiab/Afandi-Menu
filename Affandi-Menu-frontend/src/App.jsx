@@ -4,6 +4,7 @@ import Home from "./pages/home/Home.jsx"
 import Cart from "./pages/cart/Cart"
 import PlaceOrder from "./pages/place-order/PlaceOrder"
 import Footer from "./components/Footer/Footer.jsx"
+import ScrollToTop from "./components/ScrollTop/ScrollTop.jsx"
 
 const App = () => {
   
@@ -11,6 +12,7 @@ const App = () => {
     <>
     <div className="app">
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />

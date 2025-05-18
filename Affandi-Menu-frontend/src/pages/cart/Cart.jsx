@@ -11,12 +11,12 @@ const Cart = () => {
   const isCartEmpty = cartTotal === 0; // Check if cart is empty
 
   return (
-    <div className='cart'>
+    <div  className='cart'>
       {isCartEmpty ? (
         <h2 className="empty-cart-message">🛒 سلة التسوق فارغة</h2>
       ) : (
         <>
-          <div className="cart-items">
+          <div id="cart-top" className="cart-items">
             <div className="cart-items-title">
               <p>Items</p>
               <p>Title</p>
@@ -56,13 +56,8 @@ const Cart = () => {
                 </div>
                 <hr />
                 <div className="cart-total-details">
-                  <p>Delivery Fee</p>
-                  <p>100000</p>
-                </div>
-                <hr />
-                <div className="cart-total-details">
                   <b>Total in Lira :</b>
-                  <b dir='rtl' lang='ar'>{cartTotal + 100000} ل.ل</b>
+                  <b dir='rtl' lang='ar'>{cartTotal} ل.ل</b>
                 </div>
               </div>
               <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>

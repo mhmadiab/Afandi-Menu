@@ -43,7 +43,7 @@ const Home = () => {
         {totalCartItems > 0 && (
         <div className={`cart-bottom-div ${showCartDiv ? 'fade-in' : 'fade-out'}`}>
           <p>Total Cart Amount: ل.ل{getTotalCartAmount()}</p>
-          <Link to="/cart">
+          <Link to="/cart#cart-top">
             <button style={{
               backgroundColor: 'green',
               color: 'white',

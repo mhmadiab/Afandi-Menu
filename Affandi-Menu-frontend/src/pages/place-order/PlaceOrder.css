@@ -130,3 +130,37 @@
       font-size: 18px; 
     }
   }
+
+  .order-type {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+.order-type input[type="radio"] {
+  display: none;
+}
+
+.order-type label {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.order-type input[type="radio"]:checked + label {
+  background: #ff5722;
+  color: #fff;
+  border-color: #ff5722;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.order-type label:hover {
+  background: #ffeae0;
+}
+
